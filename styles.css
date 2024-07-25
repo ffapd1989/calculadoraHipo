@@ -4,8 +4,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #e9f7ef;
+    vertical-align: middle;
 }
 
 .container {
@@ -71,7 +71,17 @@ button {
     border-radius: 4px;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    margin-right: 10px; /* Add space between buttons */
 }
+
+button:hover {
+    background-color: #218838;
+}
+
+button .icon {
+    margin-right: 5px; /* Add space between icon and text */
+}
+
 
 button:hover {
     background-color: #218838;
@@ -160,6 +170,10 @@ button:hover {
     #conclusoes.error, #conclusoes.success {
         color: #000 !important;
         background-color: #efefef !important;
+    }
+
+    #calculo-detalhes {
+        font-size: 12px;       
     }
 
     .logo {

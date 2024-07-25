@@ -68,15 +68,22 @@
             
             <div class="tooltip">
                 <label for="cpf">CPF</label>
-                <input type="text" id="cpf" name="cpf" maxlength="11" required>
+                <input type="text" id="cpf" name="cpf" maxlength="14" required>
                 <span class="tooltiptext">Insira o CPF do assistido sob triagem</span>
             </div>
+           
+            <div class="tooltip">
+                <label for="operacaoRendaBruta">Renda <u>BRUTA</u> familiar</label>
+                <input type="text" id="operacaoRendaBruta" name="operacaoRendaBruta" placeholder="Digite a renda (400) ou a operação algébrica, ex: 400 + 200,01" required style="color: grey;">
+                <span class="tooltiptext">Insira a renda ou a operação algébrica para calcular a renda bruta familiar, ex: 400 + 200,01. Considere que é <b>RENDA BRUTA</b> aquela ANTERIOR aos descontos de IRPF, previdência, pensão, consignados, etc, que porventura estejam em contracheque.</span>
+            </div>
+            
             
             <div class="tooltip">
-                <label for="rendaBruta">Renda <u>BRUTA</u> familiar</label>
-                <input type="text" id="rendaBruta" name="rendaBruta" placeholder="R$ 0,00" required>
-                <span class="tooltiptext">Insira o total da renda <b>BRUTA</b> familiar do assistido, havida em contracheque ou declaração dele e dos familiares, atentando-se ao fato de que a renda bruta é aquela ANTERIOR aos descontos de IRPF, previdência, pensão, consignados, etc, que porventura estejam em contracheque.</span>
+                <input type="text" id="rendaBruta" name="rendaBruta" placeholder="R$ 0,00 (calculo automático)" required readonly style="cursor:none">
+                <span class="tooltiptext">Total da renda <b>BRUTA</b> familiar do assistido, isto é, antes dos descontos de IRPF, previdência, pensão, consignados, etc, que porventura estejam em contracheque.</span>
             </div>
+            
             
             <div class="tooltip">
                 <label for="dependentesOrdinarios">Qtde. Dependentes Ordinários</label>
@@ -95,8 +102,12 @@
         <div id="loading" style="display:none;">Carregando...</div>
         <div id="conclusoes"></div>
         <div id="dataHora" class="dataHora"></div>
-        <button id="imprimir" style="display:none;">IMPRIMIR</button>
-        <div class="footer">Versão 1.0.1 (em 25/07/2024 às 06:39).</div><div class="footer" style="font-size: 9px; margin-top: 0px; "><br>Criado por Felipe Drummond usando o ChatGPT-4o.<br><b>Sugestões? </b><a href="mailto: felipe-drummond@defensoria.rs.def.br">E-mail</a></div>
+        <button id="imprimir" style="display:none;"><span class="icon">&#x2399;</span> IMPRIMIR</button>
+        <button id="recarregar" style="display:none;">
+            <span class="icon">&#x21bb;</span> RECARREGAR FORMULÁRIO
+        </button>
+        
+        <div class="footer">Versão 1.0.2 (em 25/07/2024 às 19:30).</div><div class="footer" style="font-size: 9px; margin-top: 0px; "><br>Criado por Felipe Drummond usando o ChatGPT-4o.<br><b>Sugestões? </b><a href="mailto: felipe-drummond@defensoria.rs.def.br">E-mail</a></div>
     </div>
     <script src="script.js"></script>
 </body>
