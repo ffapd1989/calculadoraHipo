@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Elegibilidade</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .tooltip {
+            position: relative;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .tooltip label,
+        .tooltip input {
+            display: block;
+            width: 100%;
+            font-size: 5;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 40%;
+            background-color: #224220;
+            color: #fff;
+            text-align: justify;
+            border-radius: 5px;
+            padding: 5px 5px 5px 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 80%;
+            left: 40%;
+            margin-left: -150px;
+            opacity: 0;            
+            transition: opacity 0.3s;
+            font-size: 80%;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 30%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #6c757d transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.defensoria.rs.def.br/themes/modelo-hotsite/images/logos/logo.png" alt="Logo Defensoria" class="logo">
+        <h1>CALCULADORA DE HIPOSSUFICIÊNCIA ECONÔMICA</h1>
+        <h2>Fonte normativa: Resolução 07/2018 do Conselho Superior da DPERS</h2>
+        <form id="eligibility-form">
+            <div class="tooltip">
+                <label for="nome">Nome do assistido</label>
+                <input type="text" id="nome" name="nome" required>
+                <span class="tooltiptext">Insira o nome completo do assistido sob triagem</span>
+            </div>
+            
+            <div class="tooltip">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" maxlength="11" required>
+                <span class="tooltiptext">Insira o CPF do assistido sob triagem</span>
+            </div>
+            
+            <div class="tooltip">
+                <label for="rendaBruta">Renda <u>BRUTA</u> familiar</label>
+                <input type="text" id="rendaBruta" name="rendaBruta" placeholder="R$ 0,00" required>
+                <span class="tooltiptext">Insira o total da renda <b>BRUTA</b> familiar do assistido, havida em contracheque ou declaração dele e dos familiares, atentando-se ao fato de que da renda bruta é aquela ANTERIOR aos descontos de IRPF, previdência, pensão, consignados, etc, que porventura estejam em contracheque</span>
+            </div>
+            
+            <div class="tooltip">
+                <label for="dependentesOrdinarios">Qtde. Dependentes Ordinários</label>
+                <input type="number" id="dependentesOrdinarios" name="dependentesOrdinarios" min="0" value="0" required>
+                <span class="tooltiptext"><b>Dependente ordinário:</b> ascendente, descendente, cônjuge, companheiro, enteado ou pessoas sob guarda e tutela que vivam às expensas do assistido</span>
+            </div>
+            
+            <div class="tooltip">
+                <label for="dependentesEspeciais">Qtde. Dependentes Especiais:</label>
+                <input type="number" id="dependentesEspeciais" name="dependentesEspeciais" min="0" value="0" required>
+                <span class="tooltiptext"><b>Dependente extraordinário:</b> dependente incapacitado ao trabalho que demande gastos extraordinários</span>
+            </div>
+            
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="loading" style="display:none;">Carregando...</div>
+        <div id="conclusoes"></div>
+        <div id="dataHora" class="dataHora"></div>
+        <button id="imprimir" style="display:none;">IMPRIMIR</button>
+        <div class="footer">Versão 1.0. Criado por FELIPE DRUMMOND</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

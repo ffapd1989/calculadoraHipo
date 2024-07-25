@@ -1,0 +1,190 @@
+/* Estilo existente */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e9f7ef;
+}
+
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.1);
+    width: 60%;
+}
+
+.logo {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #006400;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #555555;
+    font-style: italic;
+    text-align: right;
+    margin-right: 1rem;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 11px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: 0.5s;
+    
+}
+
+input:hover, label:hover {
+    border-color: black;
+    border: 3px solid #rgb(0, 0, 0)
+    
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#loading {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #006400;
+}
+
+#conclusoes {
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+    border-width: 2px;
+    text-align: center;
+    display: none;
+    font-weight: bold;
+}
+
+#conclusoes.success {
+    color: darkgreen;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+#conclusoes.error {
+    color: darkred;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+#calculo-detalhes {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444444;
+    font-weight: normal;
+}
+
+.dataHora {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: black;
+    font-style: italic;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: right;
+    color: #555555;
+}
+
+/* Estilos de impressão */
+@media print {
+    @page {
+        size: A4;
+        margin: 20mm;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact;
+        color: #000;
+        background: #fff;
+        font-size: 12pt;
+        margin: 0;
+        padding: 0;
+    }
+
+    button, .no-print {
+        display: none !important;
+    }
+
+    .footer, .no-print {
+        display: none !important;
+    }
+
+    * {
+        color: #000 !important;
+    }
+
+    #conclusoes.error, #conclusoes.success {
+        color: #000 !important;
+        background-color: #efefef !important;
+    }
+
+    .logo {
+        width: 60% !important;
+    }
+
+    h1 {
+        font-size: 18px !important;
+    }
+
+    h2 {
+        font-size: 12px !important;
+    }
+
+    .container {
+        width: 85% !important;
+        border-radius: 8px;
+        border-color: black;
+        border-width: 2px;
+        border-style: solid;
+        box-shadow: 0 0 0;
+    }
+
+    input {
+        font-size: larger;
+        border-width: 0px;
+    };
+}
