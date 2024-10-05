@@ -200,5 +200,9 @@ button:hover {
     input {
         font-size: larger;
         border-width: 0px;
-    };
+    }
+    
+    #pdf-template {
+        display: none;
+    }
 }
